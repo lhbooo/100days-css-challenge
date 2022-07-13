@@ -11,7 +11,7 @@ function App() {
       </header>
       <main>
         <Day1></Day1>
-        <iframe height={'500px'} width={'500px'} src='https://cdpn.io/roydigerhund/fullembedgrid/JGmvaE?animations=run&type=embed'/>
+        {/* <iframe height={'500px'} width={'500px'} src='https://cdpn.io/roydigerhund/fullembedgrid/JGmvaE?animations=run&type=embed'/> */}
         {/* <Day2></Day2> */}
       </main>
     </div>
