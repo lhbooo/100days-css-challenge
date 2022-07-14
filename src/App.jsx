@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import React from 'react';
 import './App.scss';
-import Day1 from './challenge/day1'
-import Day2 from './challenge/day2'
+// import Day1 from './challenge/day1'
+const Day1 = React.lazy(() => import('./challenge/day1'));
+const Day2 = React.lazy(() => import('./challenge/day2'));
 
 function App() {
   return (
@@ -11,8 +12,8 @@ function App() {
       </header>
       <main>
         <Day1></Day1>
-        {/* <iframe height={'500px'} width={'500px'} src='https://cdpn.io/roydigerhund/fullembedgrid/JGmvaE?animations=run&type=embed'/> */}
-        {/* <Day2></Day2> */}
+        <Day2></Day2>
+        {/* <iframe height={'500px'} width={'500px'} src='https://cdpn.io/roydigerhund/fullembedgrid/ZQmbNm?animations=run&type=embed'/> */}
       </main>
     </div>
   )
