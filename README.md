@@ -31,3 +31,11 @@
   }
 }
 ```
+
+# Day3
+
+* clip-path 绘制图形
+
+* 利用 transform: rotate、transform-origin 使太阳沿轨迹运行
+
+* 小山影子
