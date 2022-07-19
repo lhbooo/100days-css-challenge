@@ -1,0 +1,59 @@
+.day5 {
+  position: relative;
+  overflow: hidden;
+  .bg {
+    transform: translateX(0px);
+    transition: transform 1s;
+    position: relative;
+    .bg-1, .bg-2, .bg-3 {
+      width: 400px;
+      height: 400px;
+      position: absolute;
+      top: 0;
+    }
+    .bg-1 {
+      background-color: #9b59b6;
+    }
+    .bg-2 {
+      background-color: #3498db;
+    }
+    .bg-3 {
+      background-color: #1abc9c;
+    }
+    @for $var from 1 through 3 {
+      .bg-#{$var} {
+        left: #{($var - 1) * 400}px;
+      }
+    }
+  }
+  .center {
+    z-index: 1;
+    position: absolute;
+    width: 180px;
+    top: 50%;
+    left: calc(50% - 90px);
+    display: flex;
+    justify-content: center;
+    .circle {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 2px solid #fff;
+      cursor: pointer;
+    }
+    .c2 {
+      margin: 0 15px;
+    }
+    .ball {
+      position: absolute;
+      top: calc(50% - 20px);
+      // 5 - 70 - 135
+      left: 5px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: #fff;
+      transition: all 1s;
+    }
+  }
+}
