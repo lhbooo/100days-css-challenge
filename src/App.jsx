@@ -13,7 +13,7 @@ function App() {
       <header className="App-header">
         <h1>100 days css challenge</h1>
       </header>
-      <main>
+      <main className='challenge'>
         <Day1></Day1>
         <Day2></Day2>
         <Day3></Day3>
