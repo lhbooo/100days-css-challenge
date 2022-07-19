@@ -1,1 +1,0 @@
-import{j as a}from"./index.6af71268.js";const s=()=>a("div",{className:"frame day4",children:a("div",{className:"large",children:a("div",{className:"middle",children:a("div",{className:"small"})})})});export{s as default};
