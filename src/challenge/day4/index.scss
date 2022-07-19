@@ -1,0 +1,83 @@
+.day4 {
+  background-color: #e56262;
+  &, .large, .middle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .large, .middle, .small {
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 3px 6px 10px 1px #00000040;
+  }
+  .large {
+    width: 90px;
+    height: 90px;
+    background-color: #fff;
+    transform: scale(0);
+    animation: large-animation 4s infinite;
+  }
+  .middle {
+    width: 60px;
+    height: 60px;
+    animation: middle-animation 4s infinite;
+  }
+  .small {
+    width: 30px;
+    height: 30px;
+    animation: small-animation 4s infinite;
+  }
+  
+  @keyframes large-animation {
+    0% {
+      transform: scale(0);
+    }
+    40% {
+      transform: scale(1);
+    }
+    67% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(0);
+    }
+  }
+
+  @keyframes middle-animation {
+    0% {
+      transform: scale(0);
+    }
+    20% {
+      transform: scale(0);
+    }
+    35% {
+      transform: scale(1);
+    }
+    60% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(0);
+    }
+  }
+  @keyframes small-animation {
+    0% {
+      transform: scale(0);
+    }
+    35% {
+      transform: scale(0);
+    }
+    45% {
+      transform: scale(1);
+    }
+    55% {
+      transform: scale(1);
+    }
+    90% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(0);
+    }
+  }
+}
