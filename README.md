@@ -39,3 +39,17 @@
 * 利用 transform: rotate、transform-origin 使太阳沿轨迹运行
 
 * 小山影子
+
+# day6
+
+* 可以利用 css 的 `visibility: visible` 和 `visibility: hidden` 在 hover 时进行显隐切换
+
+* scss 继承样式
+```scss
+.line-blue {
+  @extend .line-red;
+  polyline {
+    stroke: $blue;
+  }
+}
+```
