@@ -1,0 +1,120 @@
+.day7{
+  $text-color: #796450;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to top right, #edbc6b, #7d4d31);
+  @mixin text-style($selector) {
+    color: $text-color;
+    text-align: center;
+    #{$selector} {
+      margin: 0;
+      line-height: 16px;
+    }
+    div {
+      font-size: 12px;
+    }
+  }
+  @mixin round($num) {
+    width: calc(70px + 6px * $num);
+    height: calc(70px + 6px * $num);;
+    position: absolute;
+    left: calc(-3px * $num);
+    top: calc(-3px * $num);
+    border: 1px solid $text-color;
+    border-radius: 50%;
+    transition: all 1.5s ease-in-out;
+    transform: rotate(0deg);
+  }
+  .wapper {
+    overflow: hidden;
+    border-radius: 3px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    width: 320px;
+    height: 299px;
+    display: flex;
+    .left {
+      flex: 1;
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .avatar {
+        position: relative;
+        height: 70px;
+        margin: 40px 0 0;
+        img{
+          width: 70px;
+          height: 70px;
+          border-radius: 50%;
+          margin-bottom: 20px;
+        }
+        .round-1 {
+          @include round(1);
+          border-left-color: #fff;
+        }
+        .round-2 {
+          @include round(2);
+          border-right-color: #fff;
+        }
+        &:hover {
+          .round-1 {
+            transform: rotate(360deg);
+          }
+          .round-2 {
+            transform: rotate(-360deg);
+          }
+        }
+      }
+      .introduction {
+        margin-top: 25px;
+        @include text-style(h4)
+      }
+      .actions {
+        margin-top: 30px;
+        .follow, .message {
+          color: $text-color;
+          font-weight: 500;
+          font-size: 13px;
+          display: block;
+          width: 100px; 
+          height: 30px;
+          border-radius: 20px;
+          background-color: #fff;
+          border: 1px solid $text-color;
+          margin-bottom: 10px;
+          cursor: pointer;
+          transition: all 0.3s ease-in-out;
+          &:hover {
+            background-color: $text-color;
+            color: #fff;
+          }
+        }
+      }
+    }
+    .right {
+      width: 110px;
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+      .cell {
+        cursor: pointer;
+        background-color: #f5e8df;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        @include text-style(h3);
+        transition: background-color 0.4s ease-in-out;
+        &:hover {
+          background-color: #ded1c2;
+
+        }
+      }
+      .cell:nth-child(2) {
+        margin: 1px 0;
+        
+      }
+    }
+  }
+}
