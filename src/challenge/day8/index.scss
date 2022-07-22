@@ -37,6 +37,7 @@
     .menu-item {
       padding: 15px 35px;
       cursor: pointer;
+      transition: all .5s ease-in-out;
       &:hover {
         background-color: #3e5167;
         color: #ffffff;
