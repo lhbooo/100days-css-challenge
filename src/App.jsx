@@ -8,6 +8,7 @@ const Day4 = React.lazy(() => import('./challenge/day4'));
 const Day5 = React.lazy(() => import('./challenge/day5'));
 const Day6 = React.lazy(() => import('./challenge/day6'));
 const Day7 = React.lazy(() => import('./challenge/day7'));
+const Day8 = React.lazy(() => import('./challenge/day8'));
 
 function App() {
   return (
@@ -16,15 +17,16 @@ function App() {
         <h1>100 days css challenge</h1>
       </header>
       <main className='challenge'>
-        {/* <Day1></Day1>
+        <Day1></Day1>
         <Day2></Day2>
         <Day3></Day3>
         <Day4></Day4>
         <Day5></Day5>
-        <Day6></Day6> */}
+        <Day6></Day6>
         <Day7></Day7>
+        <Day8></Day8>
       </main>
-      <iframe height={'500px'} width={'500px'} src='https://cdpn.io/roydigerhund/fullembedgrid/OMreoV?animations=run&type=embed'/>
+      {/* <iframe height={'500px'} width={'500px'} src='https://cdpn.io/roydigerhund/fullembedgrid/ZQwJyj?animations=run&type=embed'/> */}
     </div>
   )
 }
