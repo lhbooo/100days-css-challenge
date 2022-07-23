@@ -9,6 +9,7 @@ const Day5 = React.lazy(() => import('./challenge/day5'));
 const Day6 = React.lazy(() => import('./challenge/day6'));
 const Day7 = React.lazy(() => import('./challenge/day7'));
 const Day8 = React.lazy(() => import('./challenge/day8'));
+const Day9 = React.lazy(() => import('./challenge/day9'));
 
 function App() {
   return (
@@ -25,8 +26,9 @@ function App() {
         <Day6></Day6>
         <Day7></Day7>
         <Day8></Day8>
+        <Day9></Day9>
       </main>
-      {/* <iframe height={'500px'} width={'500px'} src='https://cdpn.io/roydigerhund/fullembedgrid/ZQwJyj?animations=run&type=embed'/> */}
+      {/* <iframe height={'500px'} width={'500px'} src='https://cdpn.io/roydigerhund/fullembedgrid/XXOqoG?animations=run&type=embed'/> */}
     </div>
   )
 }

@@ -1,0 +1,99 @@
+.day9{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+  position: relative;
+  filter: contrast(25);
+  .center {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background-color: #fff;
+    position: relative;
+    filter: blur(15px);
+    @keyframes blubb-1 {
+      from {
+        transform: rotate(0deg);
+      }
+      to{
+        transform: rotate(360deg);
+      }
+    }
+    @keyframes blubb-2 {
+      from {
+        transform: rotate(45deg);
+      }
+      to{
+        transform: rotate(405deg);
+      }
+    }
+    .blubb-1 {
+      position: absolute;
+      top: -5px;
+      left: -5px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: #fff;
+      filter: blur(5px);
+      transform: rotate(0);
+      transform-origin: 50px 37px;
+      animation: blubb-1 3s linear infinite;
+    }
+    .blubb-2 {
+      @extend .blubb-1;
+      top: 8px;
+      left: 0px;
+      animation: blubb-2 3s linear infinite;
+      transform: rotate(45deg);
+      transform-origin: 45px 40px;
+    }
+
+  }
+
+  @mixin sparkle($i, $size, $originX, $originY, $from, $to) {
+    @keyframes sparkle-#{$i} {
+      from {
+        transform: rotate($from);
+      }
+      to {
+        transform: rotate($to);
+      }
+    }
+    background-color: #fff;
+    width: $size;
+    height: $size;
+    border-radius: 50%;
+    filter: blur(3px);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    animation: sparkle-+$i 4s linear infinite;
+    transform-origin: $originX $originY;
+    transform: rotate($from);
+  }
+
+  .sparkle-1 {
+    @include sparkle(1, 18px, -45px, -21px, 90deg, 450deg);
+  }
+  .sparkle-2 {
+    @include sparkle(2, 12px, 45px, 21px, -180deg, 180deg);
+  }
+  .sparkle-3 {
+    @include sparkle(3, 10px, -50px, 40px, 0deg, 360deg);
+  }
+  .sparkle-4 {
+    @include sparkle(4, 10px, -45px, -21px, -90deg, 270deg);
+  }
+  .sparkle-5 {
+    @include sparkle(5, 14px, -50px, 10px, 90deg, 450deg);
+  }
+  .sparkle-6 {
+    @include sparkle(6, 15px, 30px, 50px, 50deg, 410deg);
+  }
+  .sparkle-7 {
+    @include sparkle(7, 10px, 42px, -41px, 70deg, 430deg);
+  }
+  
+}
