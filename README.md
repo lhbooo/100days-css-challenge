@@ -65,3 +65,20 @@
 # day8
 
 * 时间线
+
+# day9
+
+* 乳状液体动效：① `filter: blur()` 将元素进行模糊处理；② 父元素使用 `filter: contrast()` 进行对比度处理。
+
+  模糊处理之前，相邻元素的每个像素都会很明显的区分来：
+  
+  ![image](https://user-images.githubusercontent.com/51857421/180601042-0af82c0b-bebf-4674-aeba-0324bfd3173b.png)
+
+  模糊处理后的元素的相邻像素不会区分的很明显：
+  
+  ![image](https://user-images.githubusercontent.com/51857421/180601031-b6a2536b-9b29-4990-adfc-e88749ab5178.png)
+  
+  再给父元素加上 `filter: contrast(25)` 进行对比度处理，类似于一个鸡蛋的形状就出来了。
+  
+  ![image](https://user-images.githubusercontent.com/51857421/180600960-f1bcaa1e-b8e4-47ee-8f50-c0917ca049f6.png)
+
