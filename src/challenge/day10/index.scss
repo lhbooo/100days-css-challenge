@@ -1,0 +1,131 @@
+.day10{
+  display: flex;
+  flex-direction: column;
+  .view {
+    position: relative;
+    flex: 1;
+    background-color: #1a2238;
+    overflow: hidden;
+    .moon {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background-color: #f6edbd;
+      position: absolute;
+      top: 30px;
+      left: 50px;
+      @mixin point($size, $top, $left) {
+        position: absolute;
+        top: $top;
+        left: $left;
+        width: $size;
+        height: $size;
+        border-radius: 50%;
+        background-color: #ece1a8;
+      }
+      .point-1 { @include point(10px, 20%, 20%); }
+      .point-2 { @include point(6px, 70%, 70%); }
+      .point-3 { @include point(8px, 20%, 60%); }
+      .point-4 { @include point(8px, 50%, 20%); }
+      .point-5 { @include point(6px, 45%, 60%); }
+      .point-6 { @include point(10px, 60%, 40%); }
+      .point-7 { @include point(10px, 30%, 50%); }
+    }
+    .cloud-1 {
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      background-color: #26314f;
+      position: absolute;
+      bottom: -150px;
+      left: -40px;
+    }
+    .cloud-2 {
+      @extend .cloud-1;
+      bottom: -150px;
+      left: unset;
+      right: -30px;
+    }
+    .cloud-3 {
+      @extend .cloud-1;
+      width: 180px;
+      height: 180px;
+      background-color: #2f3c5e;
+      bottom: -115px;
+      left: -50px;
+    }
+    .cloud-4 {
+      @extend .cloud-3;
+      width: 280px;
+      height: 280px;
+      bottom: -190px;
+      left: 70px;
+    }
+    .cloud-5 {
+      @extend .cloud-3;
+      width: 180px;
+      height: 180px;
+      bottom: -115px;
+      left: unset;
+      right: -90px;
+    }
+    @keyframes raindrop {
+      0% {
+        top: 0;
+        left: 50%;
+      }
+      85% {
+        opacity: 1;
+        transform: rotate(20deg) scaleX(1) scaleY(1);
+        top: 99%;
+        left: 40%;
+      }
+      100% {
+        top: 99%;
+        left: 40%;
+        transform: rotate(20deg) scaleX(3) scaleY(0);
+        opacity: 0;
+      }
+    }
+    [class^=raindrop-] {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #8ebff4;
+      transform: rotate(20deg) skewY(-10deg);
+      animation: raindrop 1s linear infinite;
+      animation-fill-mode: both;
+      &::before {
+        position: absolute;
+        content: "";
+        display: block;
+        top: -2px;
+        left: 1px;
+        width: 6px;
+        height: 6px;
+        background: #7FC1F9;
+        border-radius: 3px;
+      }
+      &::after {
+        position: absolute;
+        content: "";
+        display: block;
+        top: -5px;
+        left: 2px;
+        width: 4px;
+        height: 10px;
+        background: #7FC1F9;
+        border-radius: 50%;
+      }
+    }
+    .raindrop-1 {
+      
+    }
+    
+  }
+  .text-info {
+    background-color: #fff;
+    height: 90px;
+  }
+}
