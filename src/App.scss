@@ -1,5 +1,7 @@
 .App-header {
   text-align: center;
+  padding-top: 20px;
+  font-size: 25px;
 }
 
 iframe .referer-warning {
@@ -7,8 +9,19 @@ iframe .referer-warning {
 }
 
 .challenge {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.challenge-items {
   display: grid;
-  grid-template-columns: repeat(3, 33%);
+  gap: 3rem;
+}
+@media (min-width: 920px) {
+  .challenge-items {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+  }
 }
 
 h1,h2,h3,h4,h5,h6 {
