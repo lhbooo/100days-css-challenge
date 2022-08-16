@@ -82,3 +82,56 @@
   
   ![image](https://user-images.githubusercontent.com/51857421/180600960-f1bcaa1e-b8e4-47ee-8f50-c0917ca049f6.png)
 
+# day12
+
+本想用 `transition` 替代 `animation`。但若使用 `transition`， 图片放大后，层级会置于底层，所以需要利用 `animation` 修改层级。
+
+另一个点是对 scss `@for` `@if` 的运用，将如下 scss 代码使用计算得出相应的代码
+``` scss
+.pic-1 {
+  transform-origin: 0 0;
+}
+.pic-2 {
+  transform-origin: 50% 0;
+}
+.pic-3 {
+  transform-origin: 100% 0;
+}
+.pic-4 {
+  transform-origin: 0 50%;
+}
+.pic-5 {
+  transform-origin: 50% 50%;
+}
+.pic-6 {
+  transform-origin: 100% 50%;
+}
+.pic-7 {
+  transform-origin: 0 100%;
+}
+.pic-8 {
+  transform-origin: 50% 100%;
+}
+.pic-9 {
+  transform-origin: 100% 100%;
+}
+```
+
+使用 `@for`、 `@if`：
+
+```scss
+@for $i from 1 through $rows * $columns {
+  @if ($row * $rows) < $i{
+    // $row 表示当前行 
+    $row: $row+ 1;
+  }
+  // 根据当前行，计算是第几列
+  $column: $i - (($row - 1) * 3);
+
+  $top: 50% * ($row - 1);
+  $left: 50% * ($column - 1);
+  .pic-#{$i} {
+    transform-origin: $left $top;
+  }
+}
+```
