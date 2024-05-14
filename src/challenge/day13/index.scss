@@ -1,0 +1,83 @@
+.day13{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #4B4841;
+  .card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFCE4E;
+    width: 85%;
+    height: 200px;
+    border-radius: 4px;
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0, .2);
+    .container {
+      position: relative;
+      height: 100px;
+      width: 170px;
+      padding: 10px 20px 0;
+      background: url(./svgs/bycicle.svg) no-repeat center;
+      animation: bycicelAnimation .6s infinite;
+      transform-origin: 50% 100%;
+      .road {
+        width: 100%;
+        height: 8px;
+        // background-color: #ccc;
+        position: absolute;
+        bottom: 5px;
+        left: 0;
+        .road-1 {
+          position: absolute;
+          right: 0;
+          top: 0;
+          background: #4B4841;
+          width: 35px;
+          height: 3px;
+          animation: roadAnimation 1s linear 0s infinite;
+        }
+        .road-2 {
+          @extend .road-1;
+          width: 35px;
+          animation: roadAnimation 1s linear .25s infinite;
+        }
+        .road-3 {
+          @extend .road-1;
+          width: 35px;
+          animation: roadAnimation 1s linear .5s infinite;
+        }
+        .road-4 {
+          @extend .road-1;
+          width: 35px;
+          animation: roadAnimation 1s linear .75s infinite;
+        }
+      }
+    }
+  }
+
+  @keyframes bycicelAnimation {
+    0% {
+      transform: scaleY(1);
+    }
+    50% {
+      transform: scaleY(1.03);
+    }
+    100% {
+      transform: scaleY(1);
+    }
+  }
+
+  @keyframes roadAnimation {
+    0% {
+      right: -10px;
+      transform: scaleX(1);
+    }
+
+    100% {
+      right: 90%;
+      transform: scaleX(.8);
+    }
+  }
+}
+
