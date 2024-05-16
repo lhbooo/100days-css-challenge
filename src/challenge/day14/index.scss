@@ -1,0 +1,70 @@
+.day14{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to top right, #D2592A 0%, #FDB03A 100%);
+  .count-button {
+    width: 140px;
+    height: 40px;
+    padding: 5px;
+    box-sizing: border-box;
+    background-color: #fff;
+    border-radius: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .count-button__decrease {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: grid;
+      place-content: center;
+      background-color: #fff;
+      transition: background-color .4s;
+      cursor: pointer;
+      .line {
+        height: 2px;
+        width: 20px;
+        background-color: red;
+        transition: background-color .4s;
+    }
+      &:hover {
+        transition: all .4s;
+        background-color: red;
+        .line {
+          transition: all .4s;
+          background-color: #fff;
+        }
+      }
+    }
+    .count-button__increase {
+      @extend .count-button__decrease;
+      .plus {
+        .plus-h {
+          height: 2px;
+          width: 20px;
+          border-radius: 2px;
+          transition: all .4s;
+          background-color: blue;
+        }
+        .plus-v {
+          @extend .plus-h;
+          transform: rotate(90deg) translateX(-1px);
+        }
+      }
+      &:hover {
+        background-color: blue;
+        transition: all .4s;
+        .plus-h, .plus-v {
+          background-color: #fff;
+          transition: all .4s;
+        }
+      }
+    }
+    .count-button__number {
+      font-size: 18px;
+      color: #666;
+      font-weight: bold;
+    }
+  }
+}
